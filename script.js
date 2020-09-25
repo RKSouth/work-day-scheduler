@@ -39,19 +39,26 @@ console.log(present);
 // //     }
 // }
 
-if(9==present){
-    $(".textarea" ).add( document.getElementsByTagName( "textarea" )[ 0 ] )
-  .css( "background-color", "red" );
+if(9<present){
+//     $(".textarea" ).add( document.getElementsByTagName( "textarea" )[ 0 ] )
+//   .css( "background-color", "red" );
+$('.present').removeClass('present').addClass('past');
+}
+ for (i=0; i<time.length; i++){
+if(10===present){
+//     $(".textarea" ).add( document.getElementsByTagName( "textarea" )[ 0 ])
+//   .css( "background-color", "blue" );
+   $('.future').removeClass('future').addClass('present');
+    
+} else( console.log("false")) }
+if(10>present){
+//     $(".textarea" ).add( document.getElementsByTagName( "textarea" )[ 2 ] )
+//   .css( "background-color", "gray" );
     
 }
 
-if(10>present){
-    $(".textarea" ).add( document.getElementsByTagName( "textarea" )[ 1 ] )
-  .css( "background-color", "gray" );
-    
-}
 console.log(present);
-console.log($("#9").text());
+console.log($("#10"));
 // if ( $("#") == present) {
 // $(".textarea").text("present");
 // console.log("present time is working")
