@@ -38,24 +38,26 @@ console.log(present);
 // //   .css( "background-color", "red" );
 // //     }
 // }
-
-if(9<present){
+for (i=0; i< time[9]; i++){
+if(i<present){
 //     $(".textarea" ).add( document.getElementsByTagName( "textarea" )[ 0 ] )
 //   .css( "background-color", "red" );
 $('.present').removeClass('present').addClass('past');
-}
- for (i=0; i<time.length; i++){
-if(10===present){
+}}
+ for (i=0; i< time[9]; i++){
+if(i==present){
 //     $(".textarea" ).add( document.getElementsByTagName( "textarea" )[ 0 ])
 //   .css( "background-color", "blue" );
    $('.future').removeClass('future').addClass('present');
     
-} else( console.log("false")) }
-if(10>present){
+} else( console.log("false")) };
+for (i=0; i< time[9]; i++){
+if(i>present){
 //     $(".textarea" ).add( document.getElementsByTagName( "textarea" )[ 2 ] )
 //   .css( "background-color", "gray" );
     
 }
+};
 
 console.log(present);
 console.log($("#10"));
