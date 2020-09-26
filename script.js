@@ -26,22 +26,25 @@ moment().format('MMMM Do YYYY, h:mm:ss a');
 
 //change the color
 var time =[9,10,11,12,13,14,15,16,17,18];
-var classIds = ['#9','#10','#11','#12','#13','#14','#15', '#16','#17','#18'];
-var present=12;
-// parseInt(moment().format('h'));
+var textIds = ['#9','#10','#11','#12','#13','#14','#15', '#16','#17','#18'];
+var present= parseInt(moment().format('H'));
 console.log(present);
 
-for (i=0; i< time[10]; i++){
-if(i<present){
+for (i=0; i< 10; i++){
+if(time[i] == present ){
+    $(textIds[i]).removeClass('future').addClass('present');
+}
+if(time[i] < present ){
+    $(textIds[i]).removeClass('future').addClass('past');
+}
+};
 
-$('.present').removeClass('present').addClass('past');
-}}
- for (i=0; i< time[10]; i++){
-if(i==present){
+//  for (i=0; i< time[10]; i++){
+// if(i==present){
 
-   $('.future').removeClass('future').addClass('present');
-    
-} else( console.log("false")) };
+//    $('.future').removeClass('future').addClass('present');
+//    $('.past').removeClass('past').addClass('present');
+// } else( console.log("false")) };
 // for (i=0; i< time[9]; i++){
 // if(i>present){
 
