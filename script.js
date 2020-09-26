@@ -9,13 +9,6 @@ $(document).ready(function(){
     // console.log(moment().format());
 
     // Using moment format, there are different ways that we can display todays date!
-    $("#date").text(moment());
-    $("#date-formatted").text(moment().format());
-    $("#date-my").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
-
-    $("#day-week").text(moment().format('do'));
-    $("#day-month").text(moment().format('Do'));
-    $("#day-year").text(moment().format('DDDo'))
 
     // Current Time
     // Here we want to use setInterval to constantly update the time
@@ -30,14 +23,14 @@ $(document).ready(function(){
         let yearHours = date * 24
         let todayHours = moment().hour();
         let sumHours = yearHours + todayHours
-        $("#hours").text(sumHours)
+        // $("#hours").text(sumHours)
     }
 
     // Here we will get the number of minutes in the week
     let updateMinutes = function () {
         let date = moment().weekday();
         let weekMinutes = (date * 24 * 60) + (moment().minute());
-        $("#minutes").text(weekMinutes);
+        // $("#minutes").text(weekMinutes);
     }
 
     // Here we will get the number of seconds in the day
@@ -46,7 +39,7 @@ $(document).ready(function(){
         let todaySeconds = todayHours * 60 * 60;
         let thisSecond = moment().second();
         let sumSeconds = thisSecond + todaySeconds;
-        $("#seconds").text(sumSeconds);
+        // $("#seconds").text(sumSeconds);
     
     }
 
@@ -92,10 +85,10 @@ $(document).ready(function(){
     
 
 //how does the timer work??
-console.log("is the timer working? " +oldSecond);
- var theSecond = setInterval(check, 1000);
+ var theSecond = setInterval(check, 60000);
+//  variable set to setInterval(function, intervals of milliseconds 1000/1)
   function check() {
-    momentCheck = moment().format('ss');
+    momentCheck = moment().format('H');
     console.log(momentCheck);
   }
 check(theSecond);
@@ -114,21 +107,19 @@ moment().format('MMMM Do YYYY, h:mm:ss a');
 //change the color
 var time =[9,10,11,12,13,14,15,16,17,18];
 var textIds = ['#9','#10','#11','#12','#13','#14','#15', '#16','#17','#18'];
-var present= moment().hour(); 
+var present=  moment().format('H'); 
 // parseInt(moment().format('H:mm:ss'));
 console.log("present is equal to " + present);
 
 for (i=0; i< 10; i++){
-if(time[i] == 10 ){
+if(time[i] == present ){
     $(textIds[i]).removeClass('future').addClass('present');
-    co= $('#seconds').val();
-    console.log(co);
+  
 }
 if(time[i] < present ){
     $(textIds[i]).removeClass('future').addClass('past');
 }
 };
-console.log( moment().second())
 
 
 // local storage
