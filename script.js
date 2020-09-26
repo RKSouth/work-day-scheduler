@@ -126,13 +126,15 @@ if(time[i] < present ){
 
 // local storage
 var textInput;
+saveArray=[];
 $("#btn9a").on("click", function(){
     alert("The paragraph was clicked.");
     textInput = $("#9").text();
-    saveArray=[];
+    
     console.log(textInput);
     saveArray.push(textInput);
     console.log(saveArray);
+    localStorage.setItem("#btn9a",saveArray);
     // for (i=0; i<saveArray.length; i++){
     //             if (){
     //                 championScore=scoreArray[i].value;
