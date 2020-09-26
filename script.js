@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-//~~~~~~~~~~~~~~~~~dynamic time~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DYNAMIC TIME !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 let updateTime = function () {
@@ -16,6 +16,7 @@ $("#date-my").text(moment().format());
 moment().format('MMMM Do YYYY, h:mm:ss a');
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~change the color~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 var time =[9,10,11,12,13,14,15,16,17,18];
 var textIds = ['#9','#10','#11','#12','#13','#14','#15', '#16','#17','#18'];
 var present=  moment().format('H'); 
@@ -32,14 +33,13 @@ if(time[i] < present ){
     $(textIds[i]).removeClass('future').addClass('past');
 }
 };
-allDbtns = ["#btn9a","#btn10a","#btn11a","#btn12p","#btn1p","#btn2p","#btn3p","#btn4p","#btn5p"];
 //~~~~~~~~~~~~local storage~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 var textInput;
 saveArray=[];
 
 //All the buttons
-
+allDbtns = ["#btn9a","#btn10a","#btn11a","#btn12p","#btn1p","#btn2p","#btn3p","#btn4p","#btn5p"];
 // was going to put in a for loop but when I did I got errors
 
 // error 2 the text input is undefined
