@@ -122,13 +122,17 @@ if(time[i] < present ){
     $(textIds[i]).removeClass('future').addClass('past');
 }
 };
-
+allDbtns = ["#btn9a","#btn10a","#btn11a","#btn12p","#btn1p","#btn2p","#btn3p","#btn4p","#btn5p"]
 
 // local storage
+for (i=0; i< 10; i++){
+loopArray=[]
 var textInput;
 saveArray=[];
 var storedT =  $("#9").text();
 console.log($("#9").text());
+
+if (allDbtns[i] === "#btn9a"){
 $("#btn9a").on("click", function(){
     alert("The paragraph was clicked.");
    
@@ -151,5 +155,5 @@ $("#9").text(localStorage.getItem("#btn9a"));
 };
 junction();
 // local storage
-
+}}
 });//end of document
