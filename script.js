@@ -127,11 +127,13 @@ if(time[i] < present ){
 // local storage
 var textInput;
 saveArray=[];
+
 $("#btn9a").on("click", function(){
     alert("The paragraph was clicked.");
-    textInput = $("#9").text();
-    
+   
+    textInput = $("textarea").val();
     console.log(textInput);
+    saveArray.shift(textInput);
     saveArray.push(textInput);
     console.log(saveArray);
     localStorage.setItem("#btn9a",saveArray);
