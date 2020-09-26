@@ -127,64 +127,29 @@ if(time[i] < present ){
 // local storage
 var textInput;
 saveArray=[];
-
+var storedT =  $("#9").text();
+console.log($("#9").text());
 $("#btn9a").on("click", function(){
     alert("The paragraph was clicked.");
    
-    textInput = $("textarea").val();
+    textInput = $("#9").val();
     console.log(textInput);
+    //take out old text from array, add new text
     saveArray.shift(textInput);
     saveArray.push(textInput);
-    console.log(saveArray);
+    console.log($(this.saveArray));
+    //take out old text from local storage, add new text
+    localStorage.removeItem("#btn9a",saveArray);
     localStorage.setItem("#btn9a",saveArray);
-    // for (i=0; i<saveArray.length; i++){
-    //             if (){
-    //                 championScore=scoreArray[i].value;
-    //                 championName=scoreArray[i].name;
-    //             };
-    // $("h2").text("hi");
-// const initialInput = document.getElementById("initialInput");
-// const lsOutput = document.getElementById("lsOutput");
-// const championship = document.getElementById("championship");
-       
-        //need to register what button was clicked and save text area
-        //keep it in the text area upon reload
-
-// const key = initialInput.value;
-//     const value = finalScore;
-//     console.log("name" + key);
-//     console.log("score" + value);
-
+    // console.log(localStorage.getItem("#btn9a"));
+    // storedT = localStorage.getItem("#btn9a",JSON.parse(saveArray));
+    junction();
   
-//         // creating a list score for html
-//     li.textContent = key+": "+ finalScore;
-//     li.setAttribute("data-index", key);
-//     console.log(li.textContent);
-//     lsOutput.appendChild(li);
-
-//     //cheking high score
-//     toLoad = {name:initialInput.value, value:finalScore};
-//     console.log("ToLoad: " + toLoad);
-
-//     var championName;    
-//     championScore = 0;
-//     scoreArray.push(toLoad);
-//     for (i=0; i<scoreArray.length; i++){
-//         if (scoreArray[i].value >= championScore){
-//             championScore=scoreArray[i].value;
-//             championName=scoreArray[i].name;
-//         };
-
-//     console.log("champion score: " + championScore);
-//         // creating champion score
-//         championship.textContent = championName + ": "+ championScore;
-//         championship.setAttribute("data-index", key);
-//         console.log(championship.textContent);
-    
-
-//     };
-//     console.log("scoreArray: " + scoreArray[0]);
 });
+function junction () {
+$("#9").text(localStorage.getItem("#btn9a"));
+};
+junction();
 // local storage
 
 });//end of document
