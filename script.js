@@ -33,7 +33,6 @@ if(time[i] < present ){
 }
 };
 allDbtns = ["#btn9a","#btn10a","#btn11a","#btn12p","#btn1p","#btn2p","#btn3p","#btn4p","#btn5p"];
-console.log(allDbtns.indexOf("#btn9a"));
 //~~~~~~~~~~~~local storage~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 var textInput;
@@ -41,11 +40,9 @@ saveArray=[];
 
 //All the buttons
 
-
 // was going to put in a for loop but when I did I got errors
-//error 1 console.log(allDbtns.indexOf(i)); is -1??
-// error 2 the text input is undefined
 
+// error 2 the text input is undefined
 
 $("#btn9a").on("click", function(){
     //what are we saving?
@@ -138,7 +135,6 @@ $("#btn2p").on("click", function(){
 });
 
 $("#btn3p").on("click", function(){
-   
     textInput = $("#15").val();
     
 
@@ -154,7 +150,6 @@ $("#btn3p").on("click", function(){
 });
 
 $("#btn4p").on("click", function(){
-   
     textInput = $("#16").val();
 
     //take out old text from array, add new text
@@ -169,7 +164,6 @@ $("#btn4p").on("click", function(){
 });
 
 $("#btn5p").on("click", function(){
-
     textInput = $("#17").val();
 
     //take out old text from array, add new text
