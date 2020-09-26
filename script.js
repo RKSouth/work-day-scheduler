@@ -110,9 +110,11 @@ var textIds = ['#9','#10','#11','#12','#13','#14','#15', '#16','#17','#18'];
 var present=  moment().format('H'); 
 // parseInt(moment().format('H:mm:ss'));
 console.log("present is equal to " + present);
-
+//used 10 because that is how long the array is 
 for (i=0; i< 10; i++){
+//if any time is equal to now
 if(time[i] == present ){
+    //...change the equivalent text id's class to present
     $(textIds[i]).removeClass('future').addClass('present');
   
 }
@@ -123,9 +125,62 @@ if(time[i] < present ){
 
 
 // local storage
+var textInput;
+$("#btn9a").on("click", function(){
+    alert("The paragraph was clicked.");
+    textInput = $("#9").text();
+    saveArray=[];
+    console.log(textInput);
+    saveArray.push(textInput);
+    console.log(saveArray);
+    // for (i=0; i<saveArray.length; i++){
+    //             if (){
+    //                 championScore=scoreArray[i].value;
+    //                 championName=scoreArray[i].name;
+    //             };
+    // $("h2").text("hi");
+// const initialInput = document.getElementById("initialInput");
+// const lsOutput = document.getElementById("lsOutput");
+// const championship = document.getElementById("championship");
+       
+        //need to register what button was clicked and save text area
+        //keep it in the text area upon reload
 
+// const key = initialInput.value;
+//     const value = finalScore;
+//     console.log("name" + key);
+//     console.log("score" + value);
 
+  
+//         // creating a list score for html
+//     li.textContent = key+": "+ finalScore;
+//     li.setAttribute("data-index", key);
+//     console.log(li.textContent);
+//     lsOutput.appendChild(li);
 
+//     //cheking high score
+//     toLoad = {name:initialInput.value, value:finalScore};
+//     console.log("ToLoad: " + toLoad);
+
+//     var championName;    
+//     championScore = 0;
+//     scoreArray.push(toLoad);
+//     for (i=0; i<scoreArray.length; i++){
+//         if (scoreArray[i].value >= championScore){
+//             championScore=scoreArray[i].value;
+//             championName=scoreArray[i].name;
+//         };
+
+//     console.log("champion score: " + championScore);
+//         // creating champion score
+//         championship.textContent = championName + ": "+ championScore;
+//         championship.setAttribute("data-index", key);
+//         console.log(championship.textContent);
+    
+
+//     };
+//     console.log("scoreArray: " + scoreArray[0]);
+});
 // local storage
 
 });//end of document
