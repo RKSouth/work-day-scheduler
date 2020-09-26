@@ -79,27 +79,25 @@ __1.A dynamic timer that shows the current date__
  
 _Why?_
 
-To allow users to determine how secure they want their passwords. For instance, some security prompts require special charcters and some don't allow them. We wanted to create a password generator that any employee could use to secure infomration regardless of the specific requirements of their application. One generator to rule them all. 
+    A planner app that isn't at least a little dynamic is not really more useful than a peice of paper and a pen. Plus this planner is for tracking time and keeping on top of things, not for checking things off. So, having it change color with the time of day is important in order to help the user know what they should be doing at a paticular hour.
 
 _What?/How?_
 
-   ![How?-Prompts](Assets/Workdayimg.png)
+   ![How?-Prompts](Assets/Workdayimg-05.png)
 
-In order to create a prompt that does something we need to set it a variable. I set each criteria to it's own variable with it's own prompt inside of the function writePassword.
+  I was fortunent in this project to have a template to work from. I used the site moment.js and their app example as a starting point. Then, I took at all the parts I was sure I didn't need, followed by the parts that I thought I might not need. I build my own secondary function to check my understanding before I narrowed it down to this snippet of code. 
 
-Inside of the function generatePassword I created new variables for lower case, upper case, special character and numbers and made them all one string that we add together and randomly pull from. The selector, or the character length needed to be set to an integer and not used as a string. I also created if statements inside this function to detmerine what to do if n is selected. Outside of all of this, on the very bottom, after long and exhaustive definitions is the call for the function generatePassword. This is what says when that function is suppose to work after we have actually written all of the criteria to create it. 
+  The first function updates the time date regularly on the screen. Even if the users forgets to close the app before they go home for the night, it will still work for them dynamically. It writes the date directly from moment.js to the html using the moment.js format. setting any variable within the update time function and setting the interval with setInterval will update it. I chose to update it once a minute, that way the user won't miss a beat. 
 
 __2. Color changing text areas based on time__
 
 _Why?_
-
-This feature does feed into the others but I felt it important to address this issue seperately. Before completely this projects, I saw a lot of code examples and projects similar to mine that did not validate and accepted incorrect input. I chose to build my validation in but I do know there are people that consider checking for a correct answer very different than checking for an answer. 
-
+    One of the best ways to indicate anything in design is by use of color. Simple, dynamic and easy to understand at a glance. We don't want users having to think too hard about how the design works, we want them to use it naturally. 
 
 
 _What?/How?_
 	
-In order to have a customizable password, selections need to be made before the password is generated. Therefore, when the button "Generate Password" is clicked a prompt comes up allows the user to input their specific criteria. If they don't enter any valid criteria then they alerted and sent back to the previous prompt to enter in valid criteria. If they do not select some combination of upper case, lower case, numbers and special characters they will be prompted again. 
+    In order to change the colors I build two arrays, one that contained a number and one that contained a string (the id's of the textbox in the html). I also created a variable that I set to extract the time from moment.js. 
 
 ![How? -Color Change](Assets/Workdayimg-06.png)
 

@@ -6,10 +6,11 @@ $(document).ready(function(){
 let updateTime = function () {
         let currentTime = moment().format('MMMM Do YYYY')
         $("#time").text(currentTime)
+        present=  moment().format('H');
     }
 updateTime();
   
- setInterval(updateTime, 1000);
+ setInterval(updateTime, 60000);
 
 $("#date-my").text(moment().format());
 
@@ -19,7 +20,7 @@ moment().format('MMMM Do YYYY, h:mm:ss a');
 
 var time =[9,10,11,12,13,14,15,16,17,18];
 var textIds = ['#9','#10','#11','#12','#13','#14','#15', '#16','#17','#18'];
-var present=  moment().format('H'); 
+var present; 
 
 //used 10 because that is how long the array is 
 for (i=0; i< 10; i++){
