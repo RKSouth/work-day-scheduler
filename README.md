@@ -1,57 +1,13 @@
-# work-day-scheduler
-A simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
 
-Create a simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
-You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
 
-## User Story
-
-```
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
-
-## Acceptance Criteria
-
-```
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-```
-
-The following animation demonstrates the application functionality:
-
-![day planner demo](./Assets/05-third-party-apis-homework-demo.gif)
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
 
 <!-- Read Me template -->
 
-#  JavaScript: Password Generator
+#  Work-Day-Scheduler 
 
-### The goal of this project is to make a randomly generated password that a range of selected user criteria and allows them to smoothly and easily get a fresh and secure password. 
+### A simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery. 
 
 ![Password Generator](Assets/Workdayimg01.png)
 
@@ -70,7 +26,7 @@ You are required to submit the following for review:
 * Javascript (56.3%)
 
 ## Deployed Site
-[Responsive Portfolio](https://rksouth.github.io/work-day-scheduler/)
+[Work-Day-Schedular](https://rksouth.github.io/work-day-scheduler/)
 
 ## Features 
 
@@ -92,108 +48,65 @@ _What?/How?_
 __2. Color changing text areas based on time__
 
 _Why?_
-    One of the best ways to indicate anything in design is by use of color. Simple, dynamic and easy to understand at a glance. We don't want users having to think too hard about how the design works, we want them to use it naturally. 
+
+One of the best ways to indicate anything in design is by use of color. Simple, dynamic and easy to understand at a glance. We don't want users having to think too hard about how the design works, we want them to use it naturally. 
 
 
 _What?/How?_
 	
-    In order to change the colors I build two arrays, one that contained a number and one that contained a string (the id's of the textbox in the html). I also created a variable that I set to extract the time from moment.js. 
+In order to change the colors I built two arrays, one that contained a number and one that contained a string (the id's of the textbox in the html). I also created a variable that I set to extract the time from moment.js. 
+
+Then I created a for loop that iterates through 10 (the length of the array). Inside are two if statements. one that looks at present and sees if it is equal to anything in time and another that looks into the past. I used i to further determine the matching id to the time array so that present = time = id (in miltary time). Military time is helpful here, though I don't like it other circumstances to count time as numerical basis I can add and subtract with rather than having to us pm or am as indicator to add/subtract 12. I used the removeClass before I added class to make sure there was no funny business with the class before I set it. All classes are set to future by default so it's easy just to remove the future and stick in which ever is applicable. This was also helpful during debugging late at night because if something went wrong, all the boxes turn green instead of staying gray.
+
+
+
 
 ![How? -Color Change](Assets/Workdayimg-06.png)
 
-I created a series of while loops and if/else (conditional) statements that look for a boolean (true or false) of happyYet if we aren't happy Yet then we create more prompts/alerts. Each time a new loop on a new condition runs, happy Yet is reset and we have to use the conditional statement to turn it back to true. This is nested in yet another loop that checks if there are any yes statements. In this way we never leave anyone behind. Wrapping the major criteria (all except the password length) in another loop ensures that the user has to have some criteria. If they were to select no for everything then there woud be no way to generate a password. 
-
-Although it is not pictures, if you were to check the console log as you were making selections through the prompt you would see it logging the various selections made by the user. If for some reason the program broke or wasn't generating the kind of password intended this would show you where it may have gone and if the user misselected something. In future versions I would like to display the selections on the page to allow the user to confirm these things without having to use the console log. 
 
 __3. The ability to store data even when the page is closed__
 
 _Why?_
 
-If you are going to create something it really should meet all the criteria, shouldn't it? I don't want to create a password generator that doesn't do what it promises to do.
+This is an app to increase productivity. If you have to re-type in your daily to do list everytime your computer goes to sleep, you accidently close your browser or everyone decides to microwave their lunch at once-you can still keep track of what you have to do. If we are going to build something that can be done almost as well as pen and paper then it needs to at least have the functionality of pen and paper, that is, being permanent. 
 
 
 
 _What?/How?_
 
-   As far as I can tell with my code, aside from making sure things are validated using a series of prompts there are two things that are integral to creating a good password within this code. 
+Local storage is simply the act of storing something on the browser, or locally, instead of storing it on a server and giving others' access to it. Basically, all that needs to be done at a push of the button '$(#btn9a").on("click"), function(){' is to use localStorage.setItem and then localSotrage.getItem to put something in storage and retrieve it. 
 
-* ' var chars = uCase + lCase + sChar + num;
+However, I don't like my code or my readme to be messy, why would I allow that with my localStorage. So, I made sure with each click that we are both removing extra, unnecsary items from the array and the storage. I also named my storage the same name as the button so that I could easily track whether something was stored based on that button or not. All the buttons get stored in the saveArray before they get to go to localStorage.
 
-  pass = "";
-  for (var x = 0; x < length; x++) {
-      var i = Math.floor(Math.random() * chars.length);
-      pass += chars.charAt(i);
-  }'
+Not pictured is the function I built to get items, function junction. It contains a for loop that loops through my final array, allDbtns (remember that's how I named my saved text in the storage) and sets them back into the matching id's in the html. I called function junction to happen inside of the button click and outside. Meaning, the text will be updated both when the button is clicked or when the page is reloaded. This is important if the text is blank or completely erased. 
 
-    The chars variable concatinates all of the peices of the user specified criteria and then randomizes from those groups until the selection length is reached.
-
-* 'isAY = false ;
-  while (isAY == false) {
-    if (pwUpper == 'y' || pwLower == 'y' || pwSpecial == 'y' || pwNumber == 'y') 
-  {
-    isAY = true
-  } else {
-    alert("Please select at least one time of character with a y, unless you don't really want a password.")
-  }
-}'
-
-    This code does not allow the users to get away without using a y by using the conditional statement to see if any y's were used else, produce an alert and go back to the beginning until isAY is set to true.
-
-
-__4. A button__
-
-
-_Why?_
-
-I suppose we need a button to get started on the prompts. It is pretty annoying when you open a webpage and a prompt immediately comes up without you asking it to. The button allows to loop through as well. We can start and then if we need to we can start all over again. It will rewrite passwords to our hearts content.
-
-_What?How?_
-
-There are 3 seperate parts of a button in java script that connect to an additional part in html. 
-
-in html are code looks like this:
-
-'<button id="generate" class="btn">Generate Password</button>'
-
-It contains an id, a class and a area all ecompassed in it's very own special button tag.
-
-There are two ways to call a button and make it work in Javascript but I will only explain the way I did it.
-
-First, I created a variable called generateBtn. I then set it equal to 'document.querySelector("#generate");' The #generate refers back to the id given in the html. We now have that very vital connection where our button is going to begin to think about doing a thing.
-
-Second step is to make content -I need something for this button to do so when the button is pushed it needs to write to the document (html) in the text area called (id) password. This is is where our password will show up. We use the variable, pass to hold the password. 
-'document.getElementById('password').value = pass;'
-
-
-'generateBtn.addEventListener("click", writePassword);'
-
-Finally, we have to tell the button to listen. What to listen for? A click! What are we doing upon click? writing the password!	
    
     
-__5. Other/Potentional Complaints__
+__5. Other__
 
-* All the colors in the CSS are green
+* For later builds
 
-_Why?_
+_Put all the buttons in 1 for loop_
 
-In my working experience, the folks that need extra secure passwords are also the ones that need to relax. I chose to edit the CSS  to create a calmer color pallete that would easy on the eyes for those working in stressful environments. I know it might be a huge stretch but I would hope that if someone comes to my site and generates a new password that they might enjoy the calm refreshing green I chose, they might feel renewed in their work and ready to acheive great things with sensitive data. 
+ Lately I have been working to get tighter and tighter code, putting more and more in arrays, having those arrays write themselves and everything that is everything goes in a round about loop to get the computer to do the work. I wasn't able to get my for loop going for buttons this time because I wanted to take extra time to make sure I understood all the little bits of what I was coding so I want to add this here to make sure I know to go back and make it even better.
 
-* I used prompts instead of confirm statements
+_Have most of the HTML write itself_
 
-_Why?_
+Just like it's possible to tightly wad the javascript into a smaller line of code, it's possbile to do that with html. Seeing as it's a simple row of columns displayed over and over it would be simple to add it into a loop. However, I feel like that would be something best done once the loops on the buttons are finished. 
 
-Mainly because prompts were specifically requested. However, using a yes or no might be simpler in the long run. 
+_Be able to adjust whether we are looking at minuteshours/days/weeks_
 
-* There are not that many commits
+Personally, I like to plan by the week, not by the hour-so being able to pick a time frame seems like a good idea to me. It might even be cool to toggle between them. Or I could expand the local storage to not remove it's previously assigned string and pull from the strings based off of different aspects of the data.
 
-_Why?_
+_Add a fun background_
 
-I did most of the preliminary figuring out of my random generator and my button on paper and with my study group. There was an extensive amount of pseudocode/whiteboarding before I began typeing things in. I used my notes from the previous week to piece things together and think about how they would work or wouldn't work. I suppose I could add pictures of my notes but I am horribly ashamed of how messy they might look, and seeing as they were just for me -there is a huge chance that if you could them, you wouldn't be able to make sense of them. 
+Backgrounds are fun, there should be more of them!
+
 
   
 
 ## Usage
-### This is meant for employees who need to generate secure passwords to be used to access sensitive data.
+### This is meant for anyone that needs to make their work more efficient and cannot stand the inneficency of pen and paper. 
 
 ## Author 
 Rachael Kelm-Southworth
