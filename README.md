@@ -31,7 +31,7 @@
 ## Features 
 
 
-# __1.A dynamic timer that shows the current date__
+### __1. A dynamic timer that shows the current date__
  
 _Why?_
 
@@ -45,7 +45,7 @@ _What?/How?_
 
   The first function updates the time date regularly on the screen. Even if the users forgets to close the app before they go home for the night, it will still work for them dynamically. It writes the date directly from moment.js to the html using the moment.js format. setting any variable within the update time function and setting the interval with setInterval will update it. I chose to update it once a minute, that way the user won't miss a beat. 
 
-# __2. Color changing text areas based on time__
+### __2. Color changing text areas based on time__
 
 _Why?_
 
@@ -64,7 +64,7 @@ Then I created a for loop that iterates through 10 (the length of the array). In
 ![How? -Color Change](Assets/Workdayimg-06.png)
 
 
-# __3. The ability to store data even when the page is closed__
+### __3. The ability to store data even when the page is closed__
 
 _Why?_
 
@@ -87,7 +87,7 @@ It contains a for loop that loops through my final array, allDbtns (remember tha
 
    
     
-# __5. Other__
+### __5. Other__
 
  __For later builds__
 
