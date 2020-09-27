@@ -9,7 +9,7 @@
 
 ### A simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery. 
 
-![Work-Day-Scheduler](Assets/Workdayimg01.png)
+![Work-Day-Scheduler](Assets/Workdayimg-01.png)
 
 ## Table of Contents
 * [Technologies Used](Technologies_Used)
@@ -73,12 +73,14 @@ This is an app to increase productivity. If you have to re-type in your daily to
 
 
 _What?/How?_
-
+![How? -Save Data](Assets/Workdayimg-07.png)
 Local storage is simply the act of storing something on the browser, or locally, instead of storing it on a server and giving others' access to it. Basically, all that needs to be done at a push of the button '$(#btn9a").on("click"), function(){' is to use localStorage.setItem and then localSotrage.getItem to put something in storage and retrieve it. 
 
 However, I don't like my code or my readme to be messy, why would I allow that with my localStorage. So, I made sure with each click that we are both removing extra, unnecsary items from the array and the storage. I also named my storage the same name as the button so that I could easily track whether something was stored based on that button or not. All the buttons get stored in the saveArray before they get to go to localStorage.
 
-Not pictured is the function I built to get items, function junction. It contains a for loop that loops through my final array, allDbtns (remember that's how I named my saved text in the storage) and sets them back into the matching id's in the html. I called function junction to happen inside of the button click and outside. Meaning, the text will be updated both when the button is clicked or when the page is reloaded. This is important if the text is blank or completely erased. 
+Finally, we get to the function I built to get items, function junction.
+![How? -Get Local Storage](Assets/Workdayimg-08.png)
+It contains a for loop that loops through my final array, allDbtns (remember that's how I named my saved text in the storage) and sets them back into the matching id's in the html. I called function junction to happen inside of the button click and outside. Meaning, the text will be updated both when the button is clicked or when the page is reloaded. This is important if the text is blank or completely erased. 
 
    
     
