@@ -9,7 +9,7 @@
 
 ### A simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery. 
 
-![Password Generator](Assets/Workdayimg01.png)
+![Work-Day-Scheduler](Assets/Workdayimg01.png)
 
 ## Table of Contents
 * [Technologies Used](Technologies_Used)
@@ -21,12 +21,12 @@
 * [License](License)
 
 ## Technologies_Used
-* HTML (27.3%)
-* CSS (16.4%)
-* Javascript (56.3%)
+* HTML (42.8%)
+* CSS (7.7%)
+* Javascript (49.5%) -moment.js
 
 ## Deployed Site
-[Work-Day-Schedular](https://rksouth.github.io/work-day-scheduler/)
+[Work-Day-Scheduler](https://rksouth.github.io/work-day-scheduler/)
 
 ## Features 
 
@@ -35,7 +35,7 @@ __1.A dynamic timer that shows the current date__
  
 _Why?_
 
-    A planner app that isn't at least a little dynamic is not really more useful than a peice of paper and a pen. Plus this planner is for tracking time and keeping on top of things, not for checking things off. So, having it change color with the time of day is important in order to help the user know what they should be doing at a paticular hour.
+A planner app that isn't at least a little dynamic is not really more useful than a peice of paper and a pen. Plus this planner is for tracking time and keeping on top of things, not for checking things off. So, having it change color with the time of day is important in order to help the user know what they should be doing at a paticular hour.
 
 _What?/How?_
 
